@@ -1,0 +1,39 @@
+TESTE PRÁTICO DE DESENVOLVIMENTO
+
+
+Informações gerais:
+- A solução do teste está dividida em 2 projetos: 
+  - Cec.Sistemas: projeto core composto por camadas divididas em diretórios (facade, business, repository, entities).
+  - Cec.Sistemas.WebForms: camada de apresentação.
+- A aplicação foi construída com EntityFramework com o conceito de CodeFirst:
+  - O migration está configurado e ativado para atualizações automáticas.
+  - Atualizações nas entidades serão refletidas automaticamente no banco de dados.
+  - Em caso de dificuldade de utilização do Migration, esse pode ser removido e a estrutura de banco de dados pode ser atualizada manualmente.
+- Bugs podem existir e fazem parte do teste.
+- Qualquer manutenção necessária na estrutura genérica pode ser realizada se necessário.
+
+
+Antes de iniciar a aplicação:
+- Criar uma base de dados no SQLServer
+- Abrir o arquivo web.config do projeto Cec.Sistemas.WebForms e editar as chaves "Server" e "Database" no "AppSettings", apontando para instância e nome de banco de dados.
+- Nas configurações da solução, setar o projeto Cec.Sistemas.WebForms como principal.
+
+
+Atividades back-end:
+- Incluir na entidade de Cliente 2 novas colunas: tipo de pessoa (pessoa física ou jurídica) e documento de CPF ou CNPJ.
+- Deve-se implementar em todas as camadas os recursos para listagem e gravação (inclusão, alteração) de dados da entidade "Cliente" (encontrado na camada de entidades).
+- Implementar estrutura e métodos para exclusão de dados de "Grupos".
+- Implementar estrutura e métodos para exclusão de dados de "Cliente".
+- Implementar método na camada facade que permita a busca de dados de "Grupos" por nome.
+- Implementar regra para impedir cadastro duplicado de nomes de Grupo.
+- Implementar regra para impedir cadastro duplicado de nomes de Clientes.
+- Implementar uma nova propriedade na entidade "Cliente" com o objetivo de identificar o grupo a que pertence.
+- Disponibilizar recursos para um relatório que exibirá o relacionamento das informações entre "Grupos" e "Clientes".
+
+
+Atividades front-end:
+- Incluir página que carregue os dados de "Clientes", exibindo as colunas de "Nome", "Tipo" (física ou jurídica), "CPF/CNPJ", "Grupo" e "Ativo".
+- Criar página para inclusão de dados de "Grupos".
+- Criar página para inclusão de dados de "Clientes", validando CPF ou CNPJ de acordo com o tipo.
+- Criar uma página para exibir um relatório em HTML dos dados de "Grupo X Cliente".
+- Criar links na MasterPage para acessar as novas páginas criadas anteriormente.
